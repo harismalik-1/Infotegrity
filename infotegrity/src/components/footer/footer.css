@@ -1,0 +1,12 @@
+.footer-container {
+    font-size: 18px; /* Match the font size of the navbar */
+    padding: 10px 10px; /* Match the padding of the navbar */
+    background-color: black; /* Assuming the navbar has a black background */
+    color: white; /* Assuming the navbar has white text */
+    text-align: center;
+  }
+  
+  .footer-container p {
+    margin: 5px 0;
+  }
+  

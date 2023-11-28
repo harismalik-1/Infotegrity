@@ -35,3 +35,12 @@
     color: black;
     border: 1px solid black;
 }
+.active-nav-link {
+    font-weight: bold;
+  }
+  
+  /* You can also style it further to give more visual feedback */
+  .active-nav-link {
+    font-weight: bold;
+    color: #fff; /* Or any other color to highlight the active link */
+  }

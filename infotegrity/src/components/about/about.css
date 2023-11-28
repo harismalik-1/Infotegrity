@@ -1,0 +1,59 @@
+.about-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mission-section, .team-section {
+    margin-top: 30px;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 150px; /* Add horizontal gap between team members */
+    flex-wrap: wrap; /* Wrap team members on smaller screens */
+  }
+  
+  .team-member {
+    max-width: 200px;
+    margin-bottom: 20px; /* Add space below each team member */
+    margin-top: 20px;
+  }
+  
+  .team-member img {
+    max-width: 100%;
+    border-radius: 50%; /* Circular images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to images */
+  }
+  
+  .team-member h3 {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .team-member p {
+    color: #666;
+    font-size: 14px; /* Adjust font size */
+  }
+  
+  /* Additional Styling for Mission Section */
+  .mission-section {
+    padding: 15px;
+    background-color: #eef; /* Light background for mission section */
+    border-radius: 5px;
+  }
+  
+  .mission-section h2 {
+    color: #0056b3; /* Matching color theme */
+  }
+  
+  .mission-section p {
+    text-align: justify; /* Justify text for better readability */
+    color: #444;
+  }
+  
