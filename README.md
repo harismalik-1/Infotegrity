@@ -24,7 +24,7 @@ A step-by-step series of examples that tell you how to get a development environ
    npm start
    cd backend
    python3 flaskApp.py
-
+   ```
 ### Using Infotegrity
 To use Infotegrity:
 
