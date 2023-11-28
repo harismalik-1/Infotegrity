@@ -31,7 +31,11 @@ Using Infotegrity
 To use Infotegrity:
 
 Open your browser and navigate to localhost:3000.
+
 Find an online article you wish to analyze.
+
 Copy the article's URL and paste it into the analyze bar on Infotegrity.
+
 Press the "Analyze" button.
+
 Explore the analysis results provided by the platform.
