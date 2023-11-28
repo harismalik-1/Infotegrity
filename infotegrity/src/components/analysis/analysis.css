@@ -1,0 +1,43 @@
+.analysis-container {
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  
+  .analysis-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .analysis-container h3 {
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .analysis-container h4 {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .analysis-container section {
+    margin-bottom: 30px;
+  }
+  
+  /* Additional styles for specific sections */
+  .overall-bias {
+    background-color: #eef;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .overall-bias h4 {
+    color: #0056b3;
+  }
+  
+  /* Add more styles as needed */
+  

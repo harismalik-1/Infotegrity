@@ -121,7 +121,7 @@ def count_political_words(text, word_lists):
     for word in text.split():
         word = word.lower()
         if word in left_words:
-            word_counts["far_left"] += 1
+            word_counts["left"] += 1
         elif word in center_words:
             word_counts["center"] += 1
         elif word in right_words:
@@ -151,35 +151,30 @@ def analyze_url(url):
     political_word_counts = count_political_words(clean_text, word_lists)
     dominant_bias = get_dominant_political_bias(political_word_counts)
 
-    # Format the output
-    output = f"\nArticle Title: {title}\n\n"
-    output += "Sentiment Analysis Results:\n\n"
-    output += "RoBERTa Model Sentiment Scores:\n"
-    for sentiment, score in roberta_results.items():
-        output += f" - {sentiment.title()}: {round(score, 4)}\n"
-
-    output += "\nTextBlob Model Analysis (Top 5 Sentences):\n"
+    formatted_textblob_results = []
     for result in textblob_results[:5]:
         sentence = (result['sentence'][:75] + '...') if len(result['sentence']) > 75 else result['sentence']
-        output += f" - Sentence: {sentence}\n"
-        output += f"   Polarity: {round(result['polarity'], 2)}, Subjectivity: {round(result['subjectivity'], 2)}\n"
+        formatted_sentence = {
+            'sentence': sentence,
+            'polarity': round(result['polarity'], 2),
+            'subjectivity': round(result['subjectivity'], 2)
+        }
+        formatted_textblob_results.append(formatted_sentence)
 
-    output += "\nPolitical Bias Analysis (Highlighted Sentences):\n"
-    for highlighted_sentence in political_bias_sentences:
-        output += f"{highlighted_sentence}\n"
 
-    output += "\nOverall Political Bias Assessment:\n"
-    output += f" - Dominant Political Bias: {dominant_bias.title()}\n"
-
-    # output += " - Word Count Breakdown: " + ", ".join([f"{key.title()}: {count}" for key, count in political_word_counts.items()]) + "\n"
-
-    output += "\nNamed Entities (Top 5):\n"
-    for entity, label in named_entities[:5]:
-        output += f" - {entity} ({label})\n"
-        
-    # output += "\nText Complexity Analysis:\n"
-    # output += f" - Flesch Reading Ease: {complexity['flesch_reading_ease']}/100\n"
-    # output += f" - SMOG Index: {complexity['smog_index']} - a person in grade {complexity['smog_index']} can understand in first read\n"
+    output = {
+        "articleTitle": title,
+        "roBERTaScores": {sentiment.title(): round(score, 4) for sentiment, score in roberta_results.items()},
+        "textBlobAnalysis": formatted_textblob_results,
+        "politicalBias": political_bias_sentences,
+        "dominantPoliticalBias": dominant_bias.title(),
+        "namedEntities": [f"{entity} ({label})" for entity, label in named_entities[:5]],
+        "textComplexity": {
+            "fleschReadingEase": complexity['flesch_reading_ease'],
+            "smogIndex": complexity['smog_index']
+        }
+    }
 
     return output
+
 

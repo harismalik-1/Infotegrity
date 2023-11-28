@@ -10,6 +10,8 @@ def analyze_text():
     data = request.json
     url = data['url']
     result = sentiment_analysis_module.analyze_url(url)
+    print("Sending back analysis result:", result)  # Add this line
+
     return jsonify(result)
 
 if __name__ == '__main__':
